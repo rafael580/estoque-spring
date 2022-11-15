@@ -19,12 +19,10 @@ public class Funcionario implements Serializable {
     private String contato;
     private String email;
 
-    @OneToOne
-    @JoinColumn(name = "nivel_id")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Nivel nivel;
 
-    @OneToOne
-    @JoinColumn(name = "endereco_id")
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Endereco enderecos;
 
     public Funcionario(){
