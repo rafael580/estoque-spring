@@ -20,9 +20,11 @@ public class Funcionario implements Serializable {
     private String email;
 
     @OneToOne
+    @JoinColumn(name = "nivel_id")
     private Nivel nivel;
 
     @OneToOne
+    @JoinColumn(name = "endereco_id")
     private Endereco enderecos;
 
     public Funcionario(){

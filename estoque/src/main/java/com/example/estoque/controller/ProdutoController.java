@@ -18,28 +18,28 @@ public class ProdutoController {
 
     @GetMapping
     public ResponseEntity<List<Produto>> todosProdutos(){
-        List<Produto> produto = produtoService.todos();
+        List<Produto> produto = produtoService.todosProduto();
         return ResponseEntity.ok(produto);
     }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Produto> pegarProduto(@PathVariable Long id){
-        Produto produto = produtoService.pegar(id);
+        Produto produto = produtoService.pegarProduto(id);
         return ResponseEntity.ok().body(produto);
     }
     @PostMapping
     public ResponseEntity<Produto> salvaproduto(@RequestBody Produto f){
-        return ResponseEntity.ok(produtoService.salvar(f));
+        return ResponseEntity.ok(produtoService.salvarProduto(f));
     }
 
     @PutMapping(value = "/{id}")
     public ResponseEntity<Produto> atualizarProduto(@PathVariable Long id,@RequestBody Produto f){
-        return ResponseEntity.ok(produtoService.atualizar(id,f));
+        return ResponseEntity.ok(produtoService.atualizarProduto(id,f));
     }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> deleteproduto(@PathVariable Long id){
-        produtoService.delete(id);
+        produtoService.deleteProduto(id);
         return ResponseEntity.noContent().build();
     }
 
