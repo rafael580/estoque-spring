@@ -59,7 +59,6 @@ public class FuncionarioService {
         funcionario1.setNome(funcionario.getNome());
         funcionario1.setCpf(funcionario.getCpf());
         funcionario1.setEmail(funcionario.getEmail());
-//		funcionario1.setNivel(funcionario.getNivel());
         funcionario1.setNivel(nivel);
         funcionario1.setEnderecos(funcionario.getEnderecos());
 
